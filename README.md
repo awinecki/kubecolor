@@ -131,6 +131,23 @@ compdef kubecolor=kubectl
 
 Fish completion is unsupported because fish completion is officially not supported by kubectl.
 
+For a workaround, you can use an unofficial completion set (**WARNING: long-term support not guaranteed**):
+
+```shell
+fisher install awinecki/fish-kubecolor-completions
+```
+
+or
+
+```shell
+mkdir -p ~/.config/fish/completions
+cd ~/.config/fish
+git clone https://github.com/awinecki/fish-kubecolor-completions
+ln -s ../fish-kubecolor-completions/completions/kubecolor.fish completions/
+```
+
+For an alias, add `alias kc=kubecolor` to your `config.fish` file.
+
 ### Specify what command to execute as kubectl
 
 Sometimes, you may want to specify which command to use as `kubectl` internally in kubecolor. For example, when you want to use a versioned-kubectl `kubectl.1.19`, you can do that by an environment variable:
